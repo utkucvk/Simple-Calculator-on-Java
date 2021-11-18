@@ -1,0 +1,48 @@
+package com.utkcvk.emulatorhesapmakinesi;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText numara1;
+    EditText numara2;
+    TextView sonucEkranı;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        numara1 = findViewById(R.id.numara1);
+        numara2 = findViewById(R.id.numara2);
+        sonucEkranı = findViewById(R.id.sonucEkranı);
+    }
+    public void toplama (View view){
+       int sayi1 = Integer.parseInt(numara1.getText().toString());
+       int sayi2 = Integer.parseInt(numara2.getText().toString());
+       int sonuc = sayi1 + sayi2;
+       sonucEkranı.setText("Sonuç: " + sonuc);
+    }
+    public void cikarma (View view){
+        int sayi1 = Integer.parseInt(numara1.getText().toString());
+        int sayi2 = Integer.parseInt(numara2.getText().toString());
+        int sonuc = sayi1 - sayi2;
+        sonucEkranı.setText("Sonuç: " + sonuc);
+    }
+    public void carpma (View view){
+        int sayi1 = Integer.parseInt(numara1.getText().toString());
+        int sayi2 = Integer.parseInt(numara2.getText().toString());
+        int sonuc = sayi1 * sayi2;
+        sonucEkranı.setText("Sonuç: " + sonuc);
+    }
+    public void bolme (View view){
+        int sayi1 = Integer.parseInt(numara1.getText().toString());
+        int sayi2 = Integer.parseInt(numara2.getText().toString());
+        int sonuc = sayi1 / sayi2;
+        sonucEkranı.setText("Sonuç: " + sonuc);
+    }
+}
